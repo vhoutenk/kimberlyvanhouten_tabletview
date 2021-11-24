@@ -126,7 +126,7 @@ a.nav-link.active {
 }
 
 /*photo and title for just the home page*/
-    #home_header {
+#home_header {
     margin-top: 0em;
     width: 95%;
     line-height: 1;
@@ -204,21 +204,62 @@ input[type=text] {
     justify-content: space-around;
 }
 
-.artwork-container img{
+div.flip_card{
     width: 40%;
     height: 40%;
     margin: 10px;
 }
 
+.flip_card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+}
+
+.flipcard_inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.flip_card:hover .flipcard_inner {
+    transform: rotateY(180deg);
+}
+.flip_card:focus .flipcard_inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flipcard_front, .flipcard_back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.flipcard_front {
+   background-color: #FAF9F6;
+}
+
+.flipcard_back {
+    display: flex;
+    justify-content: center;
+    background-color: #FAF9F6;
+    transform: rotateY(180deg);
+}
+
 /*for the work page*/
 
-.projectContainter {
+.project_container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.projectContainter img {
+.project_container.flip_card {
     width: 30%;
     height: 30%;
     margin: 10px;
@@ -253,7 +294,7 @@ input[type=text] {
         overflow: hidden;
     }
 
-div.filterDiv.arch.ug1p1{
+div.filter_div.arch.ug1p1{
     grid-row: 2 / span 1;
 }
 
@@ -263,7 +304,7 @@ p.ug1p1{
 
 }
  
-div.filterDiv.art{
+div.filter_div.art{
     grid-row: 3 / span 1;
 }
 
@@ -272,7 +313,7 @@ p.art{
     
 }
 
-div.filterDiv.arch.ug1p2{
+div.filter_div.arch.ug1p2{
     grid-row: 4 / span 1;
 }
 
@@ -281,7 +322,7 @@ p.ug1p2{
     
 }
 
-div.filterDiv.arch.c211{
+div.filter_div.arch.c211{
     grid-row: 5 / span 1;
 }
 
@@ -290,7 +331,7 @@ p.c211{
     
 }
 
-div.filterDiv.arch.c218{
+div.filter_div.arch.c218{
     grid-row: 6 / span 1;
 }
 
@@ -323,7 +364,7 @@ footer img{
     margin: 10px;
 }
 
-p.projectInfo{
+p.project_info{
     padding: 2em;
     text-align: center;
 
@@ -406,7 +447,7 @@ p.projectInfo{
         }
 
     /*for linked work pages*/
-    p.projectInfo{
+    p.project_info{
        
         text-align:right;
         padding-left: 300px;
